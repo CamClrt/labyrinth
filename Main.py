@@ -7,10 +7,16 @@ Output :
 """
 
 #import
-from Map import *
+from Player import *
 
-#Main code
+#main code
 
 labyrinth = Map()
+player = Player()
 
 print(labyrinth)
+print(player.name)
+print(player.position)
+print(player.image)
+print(player.items)
+

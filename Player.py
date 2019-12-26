@@ -1,9 +1,12 @@
+#import
+from Map import *
+
 class Player():
     """documenter"""
 
-    def __init__(self,nom,position,image,items):
+    def __init__(self):
         #init player
-        self.nom = "MacGyver"
-        self.position = Map.START
-        self.image = image_url
-        self.items = items
+        self.name = "MacGyver"
+        self.position = "Test joueur position" #Map.START
+        self.image = "image_url"
+        self.items = "Test joueur items" #Items.ItemList
