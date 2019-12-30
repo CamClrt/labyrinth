@@ -13,6 +13,7 @@ class Items():
         self.nom = nom
         self.image = image
 
+    # comment créer 3 objets, comment les stocker, comment les placer sur la map
     def define_position_items(self):
         #Define_position randomly items
         for i in range(ITEMS):

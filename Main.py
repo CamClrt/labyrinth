@@ -2,21 +2,28 @@
 Autor : Camille Clarret
 Date : 12/24/2019
 Goal :  help MacGuiver to find the 3 items and to find the exit
-Input :
-Output :
+Input : key events
+Output : ???
 """
 
-#import
+#Import
 from Player import *
+from Items import *
+from Map import *
+from data import *
+from pygame.locals import *
 
-#main code
+#Main Code
 
-labyrinth = Map()
-player = Player()
+#Lancer la fonction de création du jeu
+#init_game()
 
-print(labyrinth)
-print(player.name)
-print(player.position)
-print(player.image)
-print(player.items)
+#Afficher un truc de départ + jeu
 
+#Comment faire évoluer la position
+#move(event)
+
+#Comment déterminer si gagné ou perdu
+#Si position = "F" et items = 3 alors ok sinon si position = "F" et items < 3 alors perdu
+
+#Relancer le jeu ?
