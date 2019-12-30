@@ -1,5 +1,5 @@
 """
-Autor : Camille Clarret
+Author : Camille Clarret
 Date : 12/24/2019
 Goal :  help MacGuiver to find the 3 items and to find the exit
 Input : key events
@@ -21,7 +21,7 @@ from pygame.locals import *
 #Afficher un truc de départ + jeu
 
 #Comment faire évoluer la position
-#move(event)
+#move(event) >>> cette partie est à gérer avec player <<<
 
 #Comment déterminer si gagné ou perdu
 #Si position = "F" et items = 3 alors ok sinon si position = "F" et items < 3 alors perdu

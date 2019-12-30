@@ -2,7 +2,7 @@
 from Map import *
 
 class Player():
-    """documenter"""
+    """documenter >>> son rôle écouter ce qu'il y a sur le clavier >>> listener il va modifier la position du joueur dans la mtrice"""
 
 ITEMS_COLLECTION = []
 
@@ -12,7 +12,7 @@ ITEMS_COLLECTION = []
         self.image = "player_url"
         self.x = x
         self.y = y
-        self.position = position #A revoir ou : (x,y) ?
+        #self.position = position #A revoir ou : (x,y) ?
 
 #METHODE DE CLASSE CF DOC OC
 #Une méthode de classe est une fonction dont le champ d'action s'étend à l'ensemble de la classe.

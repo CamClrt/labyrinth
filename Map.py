@@ -24,6 +24,13 @@ def rightPath(cls):
             elif LABYRINTH[l][c] == "F": #finish
                 PATH.append((l, c))
 
+    # comment créer 3 objets, comment les stocker, comment les placer sur la map
+    def define_position_items(self):
+        #Define_position randomly items
+        for i in range(ITEMS):
+            Index = randint(0,len(Map.PATH))
+            ItemList = Map.PATH[Index]
+
 labyrinth = Map()
 
 print(START)

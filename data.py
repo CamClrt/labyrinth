@@ -17,6 +17,8 @@ LABYRINTH = [["S", 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0],
      [1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1],
      [1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, "F", 1]]
 
+>>> A METTRE DANS UN FICHIER
+
 #Items
 ITEMS_NB = 3
 ITEMS_NAME = ["needle","ether","tube"]
