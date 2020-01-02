@@ -27,3 +27,10 @@ from pygame.locals import *
 #Si position = "F" et items = 3 alors ok sinon si position = "F" et items < 3 alors perdu
 
 #Relancer le jeu ?
+
+#quit the window
+dead = False
+while(dead == False):
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            dead = True
