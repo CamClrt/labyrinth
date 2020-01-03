@@ -7,16 +7,16 @@ Output : ???
 """
 
 #Import
-from Player import *
-from Items import *
-from Map import *
-from data import *
+import pygame
 from pygame.locals import *
+import Map
+import function
 
-#Main Code
+
+#MAIN CODE
 
 #Lancer la fonction de création du jeu
-#init_game()
+function.init_game()
 
 #Afficher un truc de départ + jeu
 
@@ -29,8 +29,8 @@ from pygame.locals import *
 #Relancer le jeu ?
 
 #quit the window
-dead = False
-while(dead == False):
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            dead = True
+#dead = False
+#while(dead == False):
+#    for event in pygame.event.get():
+#        if event.type == pygame.QUIT:
+#            dead = True

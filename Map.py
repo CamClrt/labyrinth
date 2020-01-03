@@ -1,38 +1,23 @@
 class Map():
-    """documenter"""
+    """à documenter"""
 
-#import matrix
-from data import *
+    #METHODES
+    def __init__(self,txt_file):
+        #init map
+        self.txt_file = txt_file
+        self.map_structure = ""
 
-START = []
-FINISH = []
-PATH = []
+    #ATTRIBUTES
+    def generate_map(self):
+        """Pick the file wich contains map and generate it in a list"""
+        with open(self.txt_file,encoding="UTF-8") as file_content: #Open the file
+            level_structure = []
+            for line in file_content: #Read the file and put it in a list
+                level_line = [element for element in line if element != '\n']
+                level_structure.append(level_line)
+            self.map_structure = level_structure #Update the map_structure attribute
 
-def __init__(self):
-    #init map
-    self._map = LABYRINTH #Protect the matrix
-
-@classmethod
-def rightPath(cls):
-    #define the right paths, the start and the finish locations
-    for l in range(len(LABYRINTH)): #matrix's line
-        for c in  range(len(LABYRINTH)): #matrix's column
-            if LABYRINTH[l][c] == 0: #path
-                PATH.append((l,c))
-            elif LABYRINTH[l][c] == "S": #start
-                PATH.append((l,c))
-            elif LABYRINTH[l][c] == "F": #finish
-                PATH.append((l, c))
-
-    # comment créer 3 objets, comment les stocker, comment les placer sur la map
-    def define_position_items(self):
-        #Define_position randomly items
-        for i in range(ITEMS):
-            Index = randint(0,len(Map.PATH))
-            ItemList = Map.PATH[Index]
-
-labyrinth = Map()
-
-print(START)
-print(FINISH)
-print(PATH)
+#Test
+#level = Map("map.txt")
+#level.generate_map()
+#print(level.map_structure)
