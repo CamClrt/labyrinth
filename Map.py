@@ -22,3 +22,12 @@ class Map():
         with open(self.txt_file,encoding="UTF-8") as file_content: #Open the file
             display_file = file_content.read()
         return display_file
+
+#TEST
+#level = Map()
+#print(level.map_structure)
+#level.generate_map()
+#print(level.map_structure)
+#level_position = level.map_structure
+#print(level_position)
+#print(level_position[0][0])

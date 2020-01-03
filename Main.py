@@ -1,36 +1,18 @@
-"""
-Author : Camille Clarret
-Date : 12/24/2019
-Goal :  help MacGuiver to find the 3 items and to find the exit
-Input : key events
-Output : ???
-"""
+from Map import Map
+from Player import Player
+from Position import Position
 
-#Import
-import pygame
-from pygame.locals import *
-import Map
-import function
+#init player
+only_player = Player()
+print("\nWelcome to the labyrinth {} !".format(only_player.name))
 
+#init map
+labyrinth = Map()
+print("\nWill you find the exit ?\n")
+print(labyrinth.display_map())
 
-#MAIN CODE
+position_labyrinth = labyrinth.map_structure
+print(position_labyrinth)
 
-#Lancer la fonction de création du jeu
-function.init_game()
-
-#Afficher un truc de départ + jeu
-
-#Comment faire évoluer la position
-#move(event) >>> cette partie est à gérer avec player <<<
-
-#Comment déterminer si gagné ou perdu
-#Si position = "F" et items = 3 alors ok sinon si position = "F" et items < 3 alors perdu
-
-#Relancer le jeu ?
-
-#quit the window
-#dead = False
-#while(dead == False):
-#    for event in pygame.event.get():
-#        if event.type == pygame.QUIT:
-#            dead = True
+#Print("Vous êtes actuellement positionné en {}".format(???))
+#direction = input("\nWhich position do you want to take? U = Up, D = Down, L = Left and R = Right : ")
