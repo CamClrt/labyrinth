@@ -2,9 +2,9 @@ class Map():
     """à documenter"""
 
     #METHODES
-    def __init__(self,txt_file):
+    def __init__(self):
         #init map
-        self.txt_file = txt_file
+        self.txt_file = "map.txt"
         self.map_structure = ""
 
     #ATTRIBUTES
@@ -17,7 +17,8 @@ class Map():
                 level_structure.append(level_line)
             self.map_structure = level_structure #Update the map_structure attribute
 
-#Test
-#level = Map("map.txt")
-#level.generate_map()
-#print(level.map_structure)
+    def display_map(self):
+        """Display the map on screen"""
+        with open(self.txt_file,encoding="UTF-8") as file_content: #Open the file
+            display_file = file_content.read()
+        return display_file

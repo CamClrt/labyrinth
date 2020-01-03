@@ -1,19 +1,12 @@
-def move(event):
-    #move the hero's position
-    if event.type == KEYDOWN:
-        if event.key == K_LEFT:
-            res = "Gauche"
-        if event.key == K_RIGHT:
-            res = "Droite"
-        if event.key == K_UP:
-            res = "Haut"
-        if event.key == K_DOWN:
-            res = "Bas"
-    return res
+from Map import Map
 
-#quit the window
-dead = False
-while(dead == False):
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            dead = True
+"""player = ""
+confirm_player = ""
+print("Welcome to the labyrinth")
+player = input("Insert your player name : ")
+print("Welcome {} !".format(player))"""
+
+labyrinth = Map()
+print("\nBienvenue dans le labyrinth !\n")
+print(labyrinth.display_map())
+
