@@ -17,10 +17,9 @@ position = Position(0,0)
 
 print("\nYour actual position is ({},{})".format(position.x,position.y))
 
-x = position.x
-y = position.y
+conditions = False
 
-while x != 1 and y != 1:
+while conditions == False :
     direction = input("\nWhich position do you want to take ? U = Up, D = Down, L = Left and R = Right : ")
     if direction == "D" or direction == "d":
         position.goDown()
@@ -35,5 +34,7 @@ while x != 1 and y != 1:
     x = position.x
     y = position.y
     print("\nYour new position is : ({},{})".format(position.x,position.y))
+    if x == 1 and y == 1:
+        conditions = True
 
 print("You win !!!")
