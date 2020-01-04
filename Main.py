@@ -2,7 +2,6 @@ from Map import Map
 from Player import Player
 from Position import Position
 
-
 #init player
 only_player = Player()
 print("\nWelcome to the labyrinth {} !".format(only_player.name))
@@ -12,12 +11,16 @@ labyrinth = Map()
 print("\nWill you find the exit ?\n")
 print(labyrinth.display_map())
 
-#Init position
+#init position
 position = Position(0,0)
 
 print("\nYour actual position is ({},{})".format(position.x,position.y))
 
 conditions = False
+x = position.x
+y = position.y
+if x == 0 and y == 0:
+    conditions = True
 
 while conditions == False :
     direction = input("\nWhich position do you want to take ? U = Up, D = Down, L = Left and R = Right : ")
@@ -34,7 +37,7 @@ while conditions == False :
     x = position.x
     y = position.y
     print("\nYour new position is : ({},{})".format(position.x,position.y))
-    if x == 1 and y == 1:
+    if x == 0 and y == 0:
         conditions = True
 
-print("You win !!!")
+print("Congrats ! You reach the goal !!!")

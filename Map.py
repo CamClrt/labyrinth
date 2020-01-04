@@ -5,7 +5,7 @@ class Map():
     def __init__(self):
         #init map
         self.txt_file = "map.txt"
-        self.map_structure = ""
+        self.map_structure = "" #Comment mettre à jour un attribut en dur ?
 
     #ATTRIBUTES
     def generate_map(self):
@@ -25,9 +25,7 @@ class Map():
 
 #TEST
 #level = Map()
-#print(level.map_structure)
 #level.generate_map()
 #print(level.map_structure)
 #level_position = level.map_structure
-#print(level_position)
 #print(level_position[0][0])
