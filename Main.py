@@ -2,6 +2,11 @@ from Map import Map
 from Player import Player
 from Position import Position
 
+maplist = [] #contain the matrix of the map
+conditions = False #while the player is not at the end of the labyrinth
+command = ""
+direction = ""
+
 #init player
 only_player = Player()
 print("\nWelcome to the labyrinth {} !".format(only_player.name))
@@ -10,36 +15,28 @@ print("\nWelcome to the labyrinth {} !".format(only_player.name))
 labyrinth = Map()
 print("\nWill you find the exit ?\n")
 print(labyrinth.display_map())
+maplist = labyrinth.generate_maplist()
 
 #init position
 position = Position(0,0)
 
-print("\nYour actual position is ({},{})".format(position.x,position.y))
-
-conditions = False
-x = position.x
-y = position.y
-if x == 1 and y == 1:
-    conditions = True
+print("\nYour actual position is (x: {} ,y: {})".format(position.x,position.y))
 
 while conditions == False :
-    direction = input("\nWhich position do you want to take ? U = Up, D = Down, L = Left and R = Right : ")
-    if direction == "D" or direction == "d":
-        position.goDown()
-    elif direction == "U" or direction == "u":
-        position.goUp()
-    elif direction == "L" or direction == "l":
-        position.goLeft()
-    elif direction == "R" or direction == "r":
-        position.goRight()
+    command = input("\nWhich position do you want to take ? U = Up, D = Down, L = Left and R = Right : ")
+    if command == "D" or command == "d":
+        direction = position.goDown(*maplist)
+    elif command == "U" or command == "u":
+        direction = position.goUp(*maplist)
+    elif command == "L" or command == "l":
+        direction = position.goLeft(*maplist)
+    elif command == "R" or command == "r":
+        direction = position.goRight(*maplist)
     else:
-        print("Command not found")
+        direction = "Command not found"
     x = position.x
     y = position.y
-    print("\nYour new position is : ({},{})".format(position.x,position.y))
-    if x == 1 and y == 1:
+    print("\n{} : Your new position is (x: {} ,y: {})".format(direction,position.x,position.y))
+    if position.goDown(*maplist) == "F" or position.goUp(*maplist) == "F" or position.goLeft(*maplist) == "F" or position.goRight(*maplist) == "F":
         conditions = True
-
-print("Congrats ! You reach the goal !!!")
-
-print(labyrinth.generate_maplist())
+        print("Congrats ! You reach the goal !!!")
