@@ -19,7 +19,7 @@ print("\nYour actual position is ({},{})".format(position.x,position.y))
 conditions = False
 x = position.x
 y = position.y
-if x == 0 and y == 0:
+if x == 1 and y == 1:
     conditions = True
 
 while conditions == False :
@@ -37,7 +37,9 @@ while conditions == False :
     x = position.x
     y = position.y
     print("\nYour new position is : ({},{})".format(position.x,position.y))
-    if x == 0 and y == 0:
+    if x == 1 and y == 1:
         conditions = True
 
 print("Congrats ! You reach the goal !!!")
+
+print(labyrinth.generate_maplist())
