@@ -36,7 +36,8 @@ while conditions == False :
         direction = "Command not found"
     x = position.x
     y = position.y
-    print("\n{} : Your new position is (x: {} ,y: {})".format(direction,position.x,position.y))
-    if position.goDown(*maplist) == "F" or position.goUp(*maplist) == "F" or position.goLeft(*maplist) == "F" or position.goRight(*maplist) == "F":
+    print("\n{} : Your current position is (x: {} ,y: {})".format(direction,position.x,position.y))
+
+    if x == 13 and y == 14:
         conditions = True
         print("Congrats ! You reach the goal !!!")
