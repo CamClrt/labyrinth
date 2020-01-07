@@ -5,18 +5,20 @@ from Player import Player
 from Position import Position
 
 map_list = [] #contain the matrix of the map
-game_conditions = False #while the player is not at the end of the labyrinth
+game_condition = False #while the player is not at the end of the labyrinth
+player_name = ''
 player_command = "" #the command of the player
 player_direction = "" #where the player want to go
 items_positions_list = [] #contain all the position of the items
 items_counter_set = set() #determine the number of items collected
 
 #init player
-player = Player()
+player_name = str(input("What's your name ? : "))
+player = Player(player_name)
 print("\nWelcome to the labyrinth {} !".format(player.name))
 
 #init map
-labyrinth = Map()
+labyrinth = Map(URL_MAP)
 print("\nWill you find the exit ?\n")
 print(labyrinth.display_map())
 map_list = labyrinth.generate_maplist()
@@ -36,7 +38,7 @@ player_position = Position(0, 0)
 
 print("\nYour actual position is (x: {} ,y: {})".format(player_position.x, player_position.y))
 
-while game_conditions == False :
+while game_condition == False :
     player_command = input("\nWhich position do you want to take ? U = Up, D = Down, L = Left and R = Right : ")
     if player_command == "D" or player_command == "d":
         player_direction = player_position.goDown(*map_list) #à gérer avec Player
@@ -61,7 +63,7 @@ while game_conditions == False :
 
     if player_position_tuple == (13, 14):
         if len(items_counter_set) == len(items_positions_list):
-            game_conditions = True
+            game_condition = True
             print("You win !!!")
         else:
             print("You lose")

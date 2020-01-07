@@ -2,10 +2,9 @@ class Map():
     """à documenter"""
 
     #ATTRIBUTES
-    def __init__(self):
-        #init map
-        self.txt_file = "map.txt"
-        #a revoir = mettre l'url dans data > main tapper dans data + objet
+    def __init__(self,url_map):
+        """init map"""
+        self.txt_file = url_map
 
     #METHODES
     def display_map(self):
@@ -21,4 +20,7 @@ class Map():
             for line in file_content: #Read the file and put it in a list
                 level_line = [element for element in line if element != '\n']
                 level_structure.append(level_line)
+        #ici ajouter les items ?
+
+
         return level_structure

@@ -4,10 +4,10 @@ class Player():
     """documenter"""
 
     #ATTRIBUTES
-    def __init__(self):
+    def __init__(self,name):
         #init player
-        self.name = "MacGyver"
-        self.position = Position()
+        self.name = name
+        #self.position = Position()
 
     #METHODES
     #Créer une méthode qui retourne le nom
