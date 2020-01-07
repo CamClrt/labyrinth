@@ -14,8 +14,8 @@ class Item():
     def putItems(self,*maplist):
         """Put items randomly on the map and check if it's possible"""
         self.position_x = random.randint(0, (len(maplist) - 1))
-        self.position_y = random.randint(0, (len(maplist[0]) - 1))
+        self.position_y = random.randint(1, (len(maplist[0]) - 2))
 
         while maplist[self.position_y][self.position_x] == "x":
             self.position_x = random.randint(0, (len(maplist) - 1))
-            self.position_y = random.randint(0, (len(maplist[0]) - 1))
+            self.position_y = random.randint(1, (len(maplist[0]) - 2))

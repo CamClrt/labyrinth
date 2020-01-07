@@ -1,12 +1,13 @@
 class Map():
     """à documenter"""
 
-    #METHODES
+    #ATTRIBUTES
     def __init__(self):
         #init map
         self.txt_file = "map.txt"
+        #a revoir = mettre l'url dans data > main tapper dans data + objet
 
-    #ATTRIBUTES
+    #METHODES
     def display_map(self):
         """Display the map on screen"""
         with open(self.txt_file,encoding="UTF-8") as file_content: #Open the file

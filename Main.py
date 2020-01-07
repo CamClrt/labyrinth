@@ -28,6 +28,8 @@ for n in range(len(ITEMS_LIST)):
     items.putItems(*map_list)
     items_positions_list.append((items.position_x,items.position_y))
     print("\n >>> {} (x: {}, y: {})".format(items.name,items.position_x,items.position_y))
+    #voir comment faire pour positionner les objets directement lors de la création de la map
+    #voir comment = aller mettre/positionner les 3 objets directement dans la liste de liste ?
 
 #init position
 player_position = Position(0, 0)
@@ -37,18 +39,18 @@ print("\nYour actual position is (x: {} ,y: {})".format(player_position.x, playe
 while game_conditions == False :
     player_command = input("\nWhich position do you want to take ? U = Up, D = Down, L = Left and R = Right : ")
     if player_command == "D" or player_command == "d":
-        player_direction = player_position.goDown(*map_list)
+        player_direction = player_position.goDown(*map_list) #à gérer avec Player
     elif player_command == "U" or player_command == "u":
-        player_direction = player_position.goUp(*map_list)
+        player_direction = player_position.goUp(*map_list) #à gérer avec Player
     elif player_command == "L" or player_command == "l":
-        player_direction = player_position.goLeft(*map_list)
+        player_direction = player_position.goLeft(*map_list) #à gérer avec Player
     elif player_command == "R" or player_command == "r":
-        player_direction = player_position.goRight(*map_list)
+        player_direction = player_position.goRight(*map_list) #player.move_right()
     else:
         player_direction = "Command not found"
-    x = player_position.x
-    y = player_position.y
-    player_position_tuple = (player_position.x,player_position.y)
+    x = player_position.x #à gérer avec Player
+    y = player_position.y #à gérer avec Player
+    player_position_tuple = (player_position.x,player_position.y) #à gérer avec Player
     print("\n{} : Your current position is {}".format(player_direction, player_position_tuple))
 
     for n in range(len(items_positions_list)):
