@@ -21,10 +21,3 @@ class Map():
                 level_line = [element for element in line if element != '\n']
                 level_structure.append(level_line)
         return level_structure
-
-#TEST
-#level = Map()
-#level.generate_maplist()
-#print(level.map_structure)
-#level_position = level.map_structure
-#print(level_position[0][0])

@@ -19,9 +19,3 @@ class Item():
         while maplist[self.position_y][self.position_x] == "x":
             self.position_x = random.randint(0, (len(maplist) - 1))
             self.position_y = random.randint(0, (len(maplist[0]) - 1))
-        return maplist[self.position_y][self.position_x]
-
-    #TEST
-
-    # init items
-    #items = Item(**ITEMS)
