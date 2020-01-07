@@ -9,7 +9,7 @@ class Position():
 
     # METHODES
     def goRight(self,*list):
-        # move to right
+        """move to right"""
         res = ""
         self.x += 1
         res = "Path"
@@ -24,7 +24,7 @@ class Position():
         return res
 
     def goLeft(self,*list):
-        # move to left
+        """move to left"""
         res = ""
         self.x -= 1
         res = "Path"
@@ -37,7 +37,7 @@ class Position():
         return res
 
     def goUp(self,*list):
-        # move to up
+        """move to up"""
         res = ""
         self.y -= 1
         res = "Path"
@@ -50,7 +50,7 @@ class Position():
         return res
 
     def goDown(self,*list):
-        # move to down
+        """move to down"""
         res = ""
         self.y += 1
         res = "Path"

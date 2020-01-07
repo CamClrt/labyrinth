@@ -1,4 +1,6 @@
+from data import *
 from Map import Map
+from Item import Item
 from Player import Player
 from Position import Position
 
@@ -16,6 +18,12 @@ labyrinth = Map()
 print("\nWill you find the exit ?\n")
 print(labyrinth.display_map())
 maplist = labyrinth.generate_maplist()
+
+# init items
+for n in range(len(ITEMS_LIST)):
+    items = Item(ITEMS_LIST[n])
+    items.putItems(*maplist)
+    print("\n",items.name,"x =",items.position_x,"y =",items.position_y,"rand =",n)
 
 #init position
 position = Position(0,0)
