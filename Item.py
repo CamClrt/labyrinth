@@ -1,4 +1,3 @@
-from data import *
 import random
 
 class Item():
@@ -19,3 +18,4 @@ class Item():
         while maplist[self.position_y][self.position_x] == "x":
             self.position_x = random.randint(0, (len(maplist) - 1))
             self.position_y = random.randint(1, (len(maplist[0]) - 2))
+

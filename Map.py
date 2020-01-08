@@ -20,7 +20,4 @@ class Map():
             for line in file_content: #Read the file and put it in a list
                 level_line = [element for element in line if element != '\n']
                 level_structure.append(level_line)
-        #ici ajouter les items ?
-
-
         return level_structure
