@@ -1,16 +1,16 @@
 class Player():
-    """documenter"""
+    """to create the player"""
 
     #ATTRIBUTES
     def __init__(self,name,x,y):
-        #init player
+        """init player"""
         self.name = name
         self.x = x #abscissa
         self.y = y #ordinate
 
     #METHODES
     def goRight(self,*list):
-        """move to right"""
+        """try to move to right"""
         res = ""
         self.x += 1
         res = "Path"
@@ -25,7 +25,7 @@ class Player():
         return res
 
     def goLeft(self,*list):
-        """move to left"""
+        """try to move to left"""
         res = ""
         self.x -= 1
         res = "Path"
@@ -38,7 +38,7 @@ class Player():
         return res
 
     def goUp(self,*list):
-        """move to up"""
+        """try to move to up"""
         res = ""
         self.y -= 1
         res = "Path"
@@ -51,7 +51,7 @@ class Player():
         return res
 
     def goDown(self,*list):
-        """move to down"""
+        """try to move to down"""
         res = ""
         self.y += 1
         res = "Path"

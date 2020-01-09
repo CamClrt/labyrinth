@@ -4,7 +4,9 @@ map_list = [] #contain the matrix of the map DOUBLON AVEC FONCTION ?
 game_condition = False #while the player is not at the end of the labyrinth
 player_name = "" #determine the name of the player
 player_command = "" #the command of the player
-items_counter = "" #determine the number of items collected
+items_collected_position = ""
+items_counter = set() #determine the number of items collected
+player_position = ""
 
 #Main code
 
@@ -30,13 +32,17 @@ while game_condition == False :
     else:
         print("Command not found")
 
-    print("\nYour current position is {}".format(player.get_position()))
+    player_position = player.get_position()
+    print("\nYour current position is {}".format(player_position))
 
-    items_counter = items_collected(*items_positions)
+    for n in range(len(items_positions)):
+        items_collected_position = items_positions[n]
+        if items_collected_position == player_position:
+            items_counter.add(items_collected_position)
     print("You have collected",len(items_counter),"items")
 
-    if player.get_position() == (13, 14):
-        if len(items_counter_set) == len(items_positions):
+    if player.get_position() == FINISH:
+        if len(items_counter) == len(items_positions):
             game_condition = True
             print("You win !!!")
         else:

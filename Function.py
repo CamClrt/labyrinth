@@ -26,12 +26,3 @@ def init_game(player_name):
         items_positions.append((items.position_x, items.position_y))
 
     return player, labyrinth, items_positions, map_list
-
-def items_collected(*items_positions):
-    """report the number of items collected by the player"""
-    items_counter_set = set()  # determine the number of items collected
-    for n in range(len(items_positions)):
-        item_position_tuple = items_positions[n]
-        if item_position_tuple == player.get_position():
-            items_counter_set.add(item_position_tuple)
-    return items_counter_set
