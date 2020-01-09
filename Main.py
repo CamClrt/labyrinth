@@ -1,49 +1,69 @@
 from Function import *
+import pygame
+from pygame.locals import *
 
 map_list = [] #contain the matrix of the map DOUBLON AVEC FONCTION ?
-game_condition = False #while the player is not at the end of the labyrinth
 player_name = "" #determine the name of the player
 player_command = "" #the command of the player
-items_collected_position = ""
+items_collected_position = "" #store the items' position collected
 items_counter = set() #determine the number of items collected
-player_position = ""
+player_position = "" #pygame object : rect
+close_window = False
 
-#Main code
+#MAIN CODE
 
-player_name = str(input("Welcome into labyrinth, what's your name ? : "))
+#init game
+player, labyrinth, items_positions, map_list = init_game(PLAYER_NAME)
 
-player, labyrinth, items_positions, map_list = init_game(player_name)
+#init pygame
+pygame.init()
 
-print("\n {} : will you find the exit ?\n".format(player.name))
-print(labyrinth.display_map(),"\n")
-print("Before finding the exit, you have to collect 3 items located at :",items_positions,"\n")
-print("Your actual position is {})".format(player.get_position(),"\n"))
+#set the window and its title
+pygame.display.set_caption(WINDOW_TITLE) #determine the title
+window = pygame.display.set_mode((WINDOW_SIZE,WINDOW_SIZE)) #determine the size of the window
+background = pygame.image.load(BACKGROUND).convert() #load the background
+window.blit(background, (0,0)) #stick the background
 
-while game_condition == False :
-    player_command = input("\nWhich position do you want to take ? U = Up, D = Down, L = Left and R = Right : ")
-    if player_command == "D" or player_command == "d":
-        player.goDown(*map_list)
-    elif player_command == "U" or player_command == "u":
-        player.goUp(*map_list)
-    elif player_command == "L" or player_command == "l":
-        player.goLeft(*map_list)
-    elif player_command == "R" or player_command == "r":
-        player.goRight(*map_list)
-    else:
-        print("Command not found")
+#set the player on the map
+player_picture = pygame.image.load(PLAYER_PICTURE_URL).convert_alpha() #load the player image
+player_position = player_picture.get_rect() #init rect (or move)
+window.blit(player_picture, player_position) #stick the player
 
-    player_position = player.get_position()
-    print("\nYour current position is {}".format(player_position))
+#set the guard on the map
+guard_picture = pygame.image.load(GUARD_PICTURE_URL).convert()
 
-    for n in range(len(items_positions)):
-        items_collected_position = items_positions[n]
-        if items_collected_position == player_position:
-            items_counter.add(items_collected_position)
-    print("You have collected",len(items_counter),"items")
+#set a part of the wall on the map
+wall = pygame.image.load(WALL_PICTURE_URL)
 
-    if player.get_position() == FINISH:
-        if len(items_counter) == len(items_positions):
-            game_condition = True
-            print("You win !!!")
-        else:
-            print("You lose")
+#refresh the screen
+pygame.display.flip()
+
+#move the player with the down, up, left and right buttons and quit the game
+while close_window == False:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:  #quit the programe
+            close_window = True
+        elif event.type == KEYDOWN and event.key == K_DOWN:
+            res = player.goDown(*map_list)
+            if res == "Path":
+                player_position = player_position.move(0, SPRITE_SIZE)
+        elif event.type == KEYDOWN and event.key == K_UP:
+            res = player.goUp(*map_list)
+            if res == "Path":
+                player_position = player_position.move(0, -SPRITE_SIZE)
+        elif event.type == KEYDOWN and event.key == K_LEFT:
+            res = player.goLeft(*map_list)
+            if res == "Path":
+                player_position = player_position.move(-SPRITE_SIZE,0)
+        elif event.type == KEYDOWN and event.key == K_RIGHT:
+            res = player.goRight(*map_list)
+            if res == "Path":
+                player_position = player_position.move(SPRITE_SIZE, 0)
+
+        #stick the background, the player and the guard on the map
+        window.blit(background,(0,0))
+        window.blit(player_picture, player_position)
+        window.blit(guard_picture, FINISH_PX)
+
+        #Refresh the window
+        pygame.display.flip()

@@ -21,3 +21,13 @@ class Map():
                 level_line = [element for element in line if element != '\n']
                 level_structure.append(level_line)
         return level_structure
+
+    """     line_rank = 0
+            for line in map_list:
+                element_rank = 0
+                for element in line:
+                    if map_list[line_rank][element_rank] == "Wall":
+                        window.blit(wall, (40, 0), (160,160,40,20))
+                        window.blit(wall, (40, 20), (160,160,40,20))
+                    element_rank += 1
+                line_rank += 1"""
