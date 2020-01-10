@@ -9,6 +9,7 @@ items_collected_position = "" #store the items' position collected
 items_counter = set() #determine the number of items collected
 player_position = "" #pygame object : rect
 close_window = False
+game_condition = False
 
 #MAIN CODE
 
@@ -60,10 +61,20 @@ while close_window == False:
             if res == "Path":
                 player_position = player_position.move(SPRITE_SIZE, 0)
 
+
         #stick the background, the player and the guard on the map
         window.blit(background,(0,0))
         window.blit(player_picture, player_position)
         window.blit(guard_picture, FINISH_PX)
+
+        #stick the wall on the map
+        for line in range(len(map_list)):
+            for element in range(len(map_list)):
+                if map_list[line][element] == "x":
+                    x = element * SPRITE_SIZE
+                    y = line * SPRITE_SIZE
+                    window.blit(wall, (x, y), (160, 160, 40, 20))
+                    window.blit(wall, (x, y + 20), (160, 160, 40, 20))
 
         #Refresh the window
         pygame.display.flip()
