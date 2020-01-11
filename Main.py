@@ -39,6 +39,9 @@ wall = pygame.image.load(WALL_PICTURE_URL)
 #refresh the screen
 pygame.display.flip()
 
+#Limitation de vitesse de la boucle
+pygame.time.Clock().tick(10) #FPS
+
 #move the player with the down, up, left and right buttons and quit the game
 while close_window == False:
     for event in pygame.event.get():
@@ -61,13 +64,10 @@ while close_window == False:
             if res == "Path":
                 player_position = player_position.move(SPRITE_SIZE, 0)
 
-
-        #stick the background, the player and the guard on the map
+        #stick the background on the map
         window.blit(background,(0,0))
-        window.blit(player_picture, player_position)
-        window.blit(guard_picture, FINISH_PX)
 
-        #stick the wall on the map
+        # stick the wall on the map
         for line in range(len(map_list)):
             for element in range(len(map_list)):
                 if map_list[line][element] == "x":
@@ -76,5 +76,40 @@ while close_window == False:
                     window.blit(wall, (x, y), (160, 160, 40, 20))
                     window.blit(wall, (x, y + 20), (160, 160, 40, 20))
 
-        #Refresh the window
+        # set and stick the items on the map
+        for element in range(len(ITEMS_LIST)):
+            item = pygame.image.load(ITEMS_LIST[element]).convert_alpha()
+            x, y = items_positions[element]
+            window.blit(pygame.transform.scale(item, (40, 40)), (x * SPRITE_SIZE, y * SPRITE_SIZE))
+
+        #stick the player and the guard on the map
+        window.blit(guard_picture, FINISH_PX)
+        window.blit(player_picture, player_position)
+
+        #refresh the window
         pygame.display.flip()
+
+        #collect the items
+
+
+
+        #win if the player reach the guard
+        x = player_position.x / SPRITE_SIZE
+        y = player_position.y / SPRITE_SIZE
+        if (x,y) == FINISH:
+            close_window = True
+
+
+
+        """for n in range(len(items_positions)):
+            items_collected_position = items_positions[n]
+            if items_collected_position == player_position:
+                items_counter.add(items_collected_position)
+        print("You have collected", len(items_counter), "items")
+
+        if player.get_position() == FINISH:
+            if len(items_counter) == len(items_positions):
+                game_condition = True
+                print("You win !!!")
+            else:
+                print("You lose")"""
