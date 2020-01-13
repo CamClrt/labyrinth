@@ -2,14 +2,20 @@ from Function import *
 import pygame
 from pygame.locals import *
 
-map_list = [] #contain the matrix of the map DOUBLON AVEC FONCTION ?
+map_list = [] #contain the matrix of the map
 player_name = "" #determine the name of the player
-player_command = "" #the command of the player
-items_collected_position = "" #store the items' position collected
-items_counter = set() #determine the number of items collected
+#items_collected_position = "" #store the items' position collected
+#items_counter = set() #determine the number of items collected
 player_position = "" #pygame object : rect
 close_window = False
 game_condition = False
+x_player = 0 #collect the abscissa of the player
+y_player = 0 #collect the ordinate of the wall
+x_wall = 0 #collect the abscissa of the wall
+y_wall = 0 #collect the ordinate of the wall
+x_item = 0 #collect the abscissa of the item
+y_item = 0 #collect the ordinate of the wall
+
 
 #MAIN CODE
 
@@ -39,10 +45,10 @@ wall = pygame.image.load(WALL_PICTURE_URL)
 #refresh the screen
 pygame.display.flip()
 
-#Limitation de vitesse de la boucle
-pygame.time.Clock().tick(10) #FPS
+#limitation de vitesse de la boucle
+pygame.time.Clock().tick(1) #FPS > notion à revoir frame per second
 
-#move the player with the down, up, left and right buttons and quit the game
+# move the player with the down, up, left and right buttons and quit the game
 while close_window == False:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  #quit the programe
@@ -67,20 +73,20 @@ while close_window == False:
         #stick the background on the map
         window.blit(background,(0,0))
 
-        # stick the wall on the map
+        #stick the wall on the map
         for line in range(len(map_list)):
             for element in range(len(map_list)):
                 if map_list[line][element] == "x":
-                    x = element * SPRITE_SIZE
-                    y = line * SPRITE_SIZE
-                    window.blit(wall, (x, y), (160, 160, 40, 20))
-                    window.blit(wall, (x, y + 20), (160, 160, 40, 20))
+                    x_wall = element * SPRITE_SIZE
+                    y_wall = line * SPRITE_SIZE
+                    window.blit(wall, (x_wall, y_wall), (160, 160, 40, 20)) #40*20
+                    window.blit(wall, (x_wall, y_wall + 20), (160, 160, 40, 20)) #40*20
 
-        # set and stick the items on the map
+        #set and stick the items on the map
         for element in range(len(ITEMS_LIST)):
             item = pygame.image.load(ITEMS_LIST[element]).convert_alpha()
-            x, y = items_positions[element]
-            window.blit(pygame.transform.scale(item, (40, 40)), (x * SPRITE_SIZE, y * SPRITE_SIZE))
+            x_item, y_item = items_positions[element]
+            window.blit(pygame.transform.scale(item, (40, 40)), (x_item * SPRITE_SIZE, y_item * SPRITE_SIZE))
 
         #stick the player and the guard on the map
         window.blit(guard_picture, FINISH_PX)
@@ -93,10 +99,10 @@ while close_window == False:
 
 
 
-        #win if the player reach the guard
-        x = player_position.x / SPRITE_SIZE
-        y = player_position.y / SPRITE_SIZE
-        if (x,y) == FINISH:
+        #win and close if the player reach the guard
+        x_player = player_position.x / SPRITE_SIZE
+        y_player = player_position.y / SPRITE_SIZE
+        if (x_player,y_player) == FINISH:
             close_window = True
 
 
