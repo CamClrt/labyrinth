@@ -17,12 +17,16 @@ def init_game(player_name):
     map_list = labyrinth.generate_maplist()
 
     #init items
+    items_dictionary = {}
+    items_positions = []
     for n in range(len(ITEMS_LIST)):
-        items = Item(ITEMS_LIST[n])
+        items = Item(ITEMS_LIST[n]) #generate the items object
+        items.url = ITEMS_LIST[n]
         items.putItems(*map_list)
         if n > 0: #avoid duplicate entry
             while items_positions[n-1] == (items.position_x, items.position_y):
                 items.putItems(*map_list)
         items_positions.append((items.position_x, items.position_y))
+        items_dictionary[items.url] = items.get_position()
 
-    return player, labyrinth, items_positions, map_list
+    return player, labyrinth, items_dictionary, map_list

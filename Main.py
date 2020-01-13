@@ -2,12 +2,11 @@ from Function import *
 import pygame
 from pygame.locals import *
 
-map_list = [] #contain the matrix of the map
-player_name = "" #determine the name of the player
-#items_collected_position = "" #store the items' position collected
-#items_counter = set() #determine the number of items collected
 close_window = False
 game_condition = False
+map_list = [] #contain the matrix of the map
+item_collected = "" #contain the name of the item collected
+item_tuple = "" #contain the positions of the items
 x_wall = 0 #collect the abscissa of the wall
 y_wall = 0 #collect the ordinate of the wall
 x_item = 0 #collect the abscissa of the item
@@ -17,7 +16,7 @@ y_item = 0 #collect the ordinate of the wall
 #MAIN CODE
 
 #init game
-player, labyrinth, items_positions, map_list = init_game(PLAYER_NAME)
+player, labyrinth, items_dictionary, map_list = init_game(PLAYER_NAME)
 
 #init pygame
 pygame.init()
@@ -42,11 +41,11 @@ while close_window == False:
         elif event.type == KEYDOWN and event.key == K_DOWN:
             player.go_down(*map_list)
         elif event.type == KEYDOWN and event.key == K_UP:
-            player.goUp(*map_list)
+            player.go_up(*map_list)
         elif event.type == KEYDOWN and event.key == K_LEFT:
-            player.goLeft(*map_list)
+            player.go_left(*map_list)
         elif event.type == KEYDOWN and event.key == K_RIGHT:
-            player.goRight(*map_list)
+            player.go_right(*map_list)
 
         #stick the background on the map
         window.blit(background,(0,0))
@@ -64,10 +63,10 @@ while close_window == False:
                     window.blit(wall, (x_wall, y_wall + 20), (160, 160, 40, 20)) #40*20
 
         #set and stick the items on the map
-        for element in range(len(ITEMS_LIST)):
-            item = pygame.image.load(ITEMS_LIST[element]).convert_alpha()
-            x_item, y_item = items_positions[element]
-            window.blit(pygame.transform.scale(item, (40, 40)), (x_item * SPRITE_SIZE, y_item * SPRITE_SIZE))
+        for key, value in items_dictionary.items():
+            item = pygame.image.load(key).convert_alpha()
+            item_tuple = value
+            window.blit(pygame.transform.scale(item, (40, 40)), (item_tuple[0], item_tuple[1]))
 
         #set and stick the player on the map
         player_picture = pygame.image.load(PLAYER_PICTURE_URL).convert_alpha()  #load the player image
@@ -80,25 +79,13 @@ while close_window == False:
         #refresh the window
         pygame.display.flip()
 
-        #collect the items
-
-
+        #collect item
+        for key, value in items_dictionary.items():
+            if player.get_position() == value:
+                item_collected = key
+        if item_collected != "":
+            items_dictionary.pop(item_collected,"")
 
         #win and close if the player reach the guard
         if player.get_position() == FINISH_PX: #si position player == position garde > A CORRIGER
             close_window = True
-
-
-
-        """for n in range(len(items_positions)):
-            items_collected_position = items_positions[n]
-            if items_collected_position == player_position:
-                items_counter.add(items_collected_position)
-        print("You have collected", len(items_counter), "items")
-
-        if player.get_position() == FINISH:
-            if len(items_counter) == len(items_positions):
-                game_condition = True
-                print("You win !!!")
-            else:
-                print("You lose")"""
