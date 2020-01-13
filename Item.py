@@ -4,14 +4,14 @@ from data import SPRITE_SIZE
 class Item():
     """to create the 3 items"""
 
-    #ATTRIBUTES
+    # ATTRIBUTES
     def __init__(self,item_url):
         """init player"""
         self.url = ""
         self.position_x = ""
         self.position_y = ""
 
-    #METHODES
+    # METHODES
     def putItems(self,*maplist):
         """Put items randomly on the map and check if it's possible"""
         self.position_x = random.randint(0, (len(maplist) - 1))
