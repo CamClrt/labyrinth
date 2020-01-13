@@ -47,7 +47,7 @@ def init_home_page():
 
     return home_button
 
-def init_window_game():
+def init_game_page():
     """init window and title"""
 
     # set the empty window and its title
@@ -63,3 +63,23 @@ def init_window_game():
     pygame.time.Clock().tick(10)  # FPS > notion à revoir frame per second
 
     return window, background
+
+def init_win_page():
+    # set the empty window and its title
+    pygame.display.set_caption(WINDOW_TITLE)  # determine the title
+    window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))  # determine the size of the window
+    end_page = pygame.image.load(WIN_URL).convert()  # load the background
+    window.blit(pygame.transform.scale(end_page, (WINDOW_SIZE, WINDOW_SIZE)), (0, 0))
+
+    # refresh the screen
+    pygame.display.flip()
+
+def init_lose_page():
+    # set the empty window and its title
+    pygame.display.set_caption(WINDOW_TITLE)  # determine the title
+    window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))  # determine the size of the window
+    end_page = pygame.image.load(LOSE_URL).convert()  # load the background
+    window.blit(pygame.transform.scale(end_page, (WINDOW_SIZE, WINDOW_SIZE)), (0, 0))
+
+    # refresh the screen
+    pygame.display.flip()

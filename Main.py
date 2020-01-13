@@ -12,7 +12,7 @@ x_item = 0 #collect the abscissa of the item
 y_item = 0 #collect the ordinate of the item
 
 home_page = True
-game_page = True
+game_page = False
 end_page_win = False
 end_page_lose = False
 
@@ -24,27 +24,31 @@ pygame.init()
 
 # init home page
 while home_page == True:
+
     home_button = init_home_page()
 
     # limit the FPS
-    pygame.time.Clock().tick(10)  # FPS > notion à revoir frame per second
+    pygame.time.Clock().tick(10)  # FPS
 
     for event in pygame.event.get():
         if event.type == MOUSEBUTTONDOWN:
             if home_button.collidepoint(event.pos) == True:
                 home_page = False
+                game_page = True
+        if event.type == pygame.QUIT:
+            home_page = False
 
 # init game
 player, labyrinth, items_dictionary, map_list = init_game(PLAYER_NAME)
 
 # init window for the game
-window, background = init_window_game()
+window, background = init_game_page()
 
-# move the player with the down, up, left and right buttons and quit the game
+# move the player with the down, up, left and right buttons or quit the game
 while game_page == True:
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:  # quit the programe
-            close_window = True
+        if event.type == pygame.QUIT:  # quit the program
+            game_page = False
         elif event.type == KEYDOWN and event.key == K_DOWN:
             player.go_down(*map_list)
         elif event.type == KEYDOWN and event.key == K_UP:
@@ -66,8 +70,8 @@ while game_page == True:
                 if map_list[line][element] == "x":
                     x_wall = element * SPRITE_SIZE
                     y_wall = line * SPRITE_SIZE
-                    window.blit(wall, (x_wall, y_wall), (160, 160, 40, 20)) #40*20
-                    window.blit(wall, (x_wall, y_wall + 20), (160, 160, 40, 20)) #40*20
+                    window.blit(wall, (x_wall, y_wall), (160, 160, 40, 20))  # 40*20
+                    window.blit(wall, (x_wall, y_wall + 20), (160, 160, 40, 20))  # 40*20
 
         # set and stick the items on the map
         for key, value in items_dictionary.items():
@@ -76,8 +80,8 @@ while game_page == True:
             window.blit(pygame.transform.scale(item, (40, 40)), (item_tuple[0], item_tuple[1]))
 
         # set and stick the player on the map
-        player_picture = pygame.image.load(PLAYER_PICTURE_URL).convert_alpha()  #load the player image
-        window.blit(player_picture, player.get_position())  #stick the player
+        player_picture = pygame.image.load(PLAYER_PICTURE_URL).convert_alpha()  # load the player image
+        window.blit(player_picture, player.get_position())  # stick the player
 
         # set and stick the guard on the map
         guard_picture = pygame.image.load(GUARD_PICTURE_URL).convert()
@@ -93,7 +97,10 @@ while game_page == True:
         if item_collected != "":
             items_dictionary.pop(item_collected,"")
 
-        # win and close if the player reach the guard
+        # refresh the screen
+        pygame.display.flip()
+
+        # win, if the player reach the guard with all the items collected
         if player.get_position() == FINISH_PX:
             game_page = False
             if len(items_dictionary) == 0:
@@ -101,23 +108,18 @@ while game_page == True:
             else:
                 end_page_lose = True
 
-        # refresh the screen
-        pygame.display.flip()
-
 while end_page_win == True:
-    # set the empty window and its title
-    pygame.display.set_caption(WINDOW_TITLE)  # determine the title
-    window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))  # determine the size of the window
-    end_page = pygame.image.load(WIN_URL).convert()  # load the background
-    window.blit(pygame.transform.scale(end_page, (WINDOW_SIZE, WINDOW_SIZE)), (0, 0))
 
-    # refresh the screen
-    pygame.display.flip()
+    init_win_page()
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            end_page_win = False
 
 while end_page_lose == True:
-    # set the empty window and its title
-    pygame.display.set_caption(WINDOW_TITLE)  # determine the title
-    window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))  # determine the size of the window
-    end_page = pygame.image.load(LOSE_URL).convert()  # load the background
-    window.blit(pygame.transform.scale(end_page, (WINDOW_SIZE, WINDOW_SIZE)), (0, 0))
 
+    init_lose_page()
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            end_page_lose = False
