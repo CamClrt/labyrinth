@@ -1,6 +1,4 @@
 from Function import *
-import pygame
-from pygame.locals import *
 
 close_window = False
 game_condition = False
@@ -10,7 +8,7 @@ item_tuple = "" #contain the positions of the items
 x_wall = 0 #collect the abscissa of the wall
 y_wall = 0 #collect the ordinate of the wall
 x_item = 0 #collect the abscissa of the item
-y_item = 0 #collect the ordinate of the wall
+y_item = 0 #collect the ordinate of the item
 
 
 #MAIN CODE
@@ -18,20 +16,8 @@ y_item = 0 #collect the ordinate of the wall
 #init game
 player, labyrinth, items_dictionary, map_list = init_game(PLAYER_NAME)
 
-#init pygame
-pygame.init()
-
-#set the empty window and its title
-pygame.display.set_caption(WINDOW_TITLE) #determine the title
-window = pygame.display.set_mode((WINDOW_SIZE,WINDOW_SIZE)) #determine the size of the window
-background = pygame.image.load(BACKGROUND).convert() #load the background
-window.blit(background, (0,0)) #stick the background
-
-#refresh the screen
-pygame.display.flip()
-
-#limit the FPS
-pygame.time.Clock().tick(1) #FPS > notion à revoir frame per second
+#init window
+window, background = init_window()
 
 #move the player with the down, up, left and right buttons and quit the game
 while close_window == False:

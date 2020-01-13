@@ -1,9 +1,7 @@
 PLAYER_NAME = "MacGyver"
-FINISH = (13, 14)
 FINISH_PX = (520, 560)
 URL_MAP = "map.txt"
 ITEMS_LIST = ["resources/ether.png","resources/needle.png","resources/tube.png"]
-
 
 #graphic mode
 WINDOW_TITLE = "The labyrinth"
@@ -15,3 +13,6 @@ SPRITE_SIZE = 40
 NB_SPRITE = 15
 WINDOW_SIZE = SPRITE_SIZE * NB_SPRITE
 
+HOME_URL = "resources/home.png"
+WIN_URL = "win/home.png"
+LOSE_URL = "lose/home.png"
