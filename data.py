@@ -14,6 +14,6 @@ NB_SPRITE = 15
 WINDOW_SIZE = SPRITE_SIZE * NB_SPRITE
 
 HOME_URL = "resources/home.png"
-WIN_URL = "win/home.png"
-LOSE_URL = "lose/home.png"
+WIN_URL = "resources/win.png"
+LOSE_URL = "resources/lose.png"
 WELCOME_BUTTON = (125,330,250,75) #left, top, width, height

@@ -13,7 +13,8 @@ y_item = 0 #collect the ordinate of the item
 
 home_page = True
 game_page = True
-end_page = True
+end_page_win = False
+end_page_lose = False
 
 
 # MAIN CODE
@@ -40,7 +41,7 @@ player, labyrinth, items_dictionary, map_list = init_game(PLAYER_NAME)
 window, background = init_window_game()
 
 # move the player with the down, up, left and right buttons and quit the game
-while close_window == False:
+while game_page == True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  # quit the programe
             close_window = True
@@ -93,5 +94,30 @@ while close_window == False:
             items_dictionary.pop(item_collected,"")
 
         # win and close if the player reach the guard
-        if player.get_position() == FINISH_PX: #si position player == position garde > A CORRIGER
-            close_window = True
+        if player.get_position() == FINISH_PX:
+            game_page = False
+            if len(items_dictionary) == 0:
+                end_page_win = True
+            else:
+                end_page_lose = True
+
+        # refresh the screen
+        pygame.display.flip()
+
+while end_page_win == True:
+    # set the empty window and its title
+    pygame.display.set_caption(WINDOW_TITLE)  # determine the title
+    window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))  # determine the size of the window
+    end_page = pygame.image.load(WIN_URL).convert()  # load the background
+    window.blit(pygame.transform.scale(end_page, (WINDOW_SIZE, WINDOW_SIZE)), (0, 0))
+
+    # refresh the screen
+    pygame.display.flip()
+
+while end_page_lose == True:
+    # set the empty window and its title
+    pygame.display.set_caption(WINDOW_TITLE)  # determine the title
+    window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))  # determine the size of the window
+    end_page = pygame.image.load(LOSE_URL).convert()  # load the background
+    window.blit(pygame.transform.scale(end_page, (WINDOW_SIZE, WINDOW_SIZE)), (0, 0))
+

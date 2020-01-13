@@ -32,6 +32,21 @@ def init_game(player_name):
 
     return player, labyrinth, items_dictionary, map_list
 
+def init_home_page():
+    # set the empty window and its title
+    pygame.display.set_caption(WINDOW_TITLE)  # determine the title
+    window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))  # determine the size of the window
+    home = pygame.image.load(HOME_URL).convert()  # load the background
+    window.blit(pygame.transform.scale(home, (WINDOW_SIZE, WINDOW_SIZE)), (0, 0))
+
+    # refresh the screen
+    pygame.display.flip()
+
+    # create button
+    home_button = pygame.Rect(WELCOME_BUTTON)
+
+    return home_button
+
 def init_window_game():
     """init window and title"""
 
@@ -48,18 +63,3 @@ def init_window_game():
     pygame.time.Clock().tick(10)  # FPS > notion à revoir frame per second
 
     return window, background
-
-def init_home_page():
-    # set the empty window and its title
-    pygame.display.set_caption(WINDOW_TITLE)  # determine the title
-    window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))  # determine the size of the window
-    home = pygame.image.load(HOME_URL).convert()  # load the background
-    window.blit(pygame.transform.scale(home, (WINDOW_SIZE, WINDOW_SIZE)), (0, 0))
-
-    # refresh the screen
-    pygame.display.flip()
-
-    # create button
-    home_button = pygame.Rect(WELCOME_BUTTON)
-
-    return home_button
