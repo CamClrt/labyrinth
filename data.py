@@ -1,7 +1,7 @@
 PLAYER_NAME = "MacGyver"
 FINISH_PX = (520, 560)
 URL_MAP = "map.txt"
-ITEMS_LIST = ["resources/ether.png","resources/needle.png","resources/tube.png"]
+ITEMS_LIST = ["resources/burger.png","resources/needle.png","resources/lamp.png"]
 
 #graphic mode
 WINDOW_TITLE = "The labyrinth"
