@@ -24,7 +24,7 @@ To start the game ... ???
 
 ## Quick description
 
-![quick_description.png]:
+![quick_description.png](https://github.com/CamClrt/labyrinth/blob/master/resources/quick_description.png)
 
 ## Made with
 
