@@ -1,15 +1,14 @@
 from data import SPRITE_SIZE
 
-class Player():
-    """to create the player"""
 
-    # ATTRIBUTES
+class Player():
+    """create the player"""
+
     def __init__(self,x,y):
         """init player"""
         self.x = x # abscissa
         self.y = y # ordinate
 
-    # METHODES
     def go_right(self,*list):
         """try to move to right"""
         self.x += 1

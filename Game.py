@@ -1,11 +1,15 @@
-import pygame
-from pygame.locals import *
-from data import *
 from Map import Map
 from Player import Player
 from Item import Item
 
+import pygame
+from pygame.locals import *
+
+from data import *
+
+
 class Game:
+    """launch the game"""
     def __init__(self):
         self.close_window = False
         self.game_condition = False
@@ -21,14 +25,13 @@ class Game:
         self.end_page_win = False # launch win page
         self.end_page_lose = False # launch lose page
 
-
     def start_game(self):
-        """launch the game"""
+        """start the game"""
         # init pygame
         pygame.init()
 
         # init home page
-        while self.home_page == True:
+        while self.home_page is True:
 
             self.home_button = self.init_home_page()
 
@@ -50,7 +53,7 @@ class Game:
         window, background = self.init_game_page()
 
         # move the player with the down, up, left and right buttons or quit the game
-        while self.game_page == True:
+        while self.game_page is True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:  # quit the program
                     self.game_page = False
@@ -113,7 +116,7 @@ class Game:
                     else:
                         self.end_page_lose = True
 
-        while self.end_page_win == True:
+        while self.end_page_win is True:
 
             self.init_win_page()
 
@@ -121,7 +124,7 @@ class Game:
                 if event.type == pygame.QUIT:
                     self.end_page_win = False
 
-        while self.end_page_lose == True:
+        while self.end_page_lose is True:
 
             self.init_lose_page()
 

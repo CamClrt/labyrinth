@@ -1,12 +1,10 @@
 class Map():
-    """to create the structure of the labyrinth thanks to the source map.txt"""
+    """create the structure of the labyrinth thanks to the source map.txt"""
 
-    # ATTRIBUTES
     def __init__(self,url_map):
         """init map"""
         self.txt_file = url_map
 
-    # METHODES
     def generate_maplist(self):
         """pick the file wich contains map and generate it in a list"""
         with open(self.txt_file,encoding="UTF-8") as file_content: # Open the file
