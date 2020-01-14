@@ -34,8 +34,8 @@ Feel free to contribute to this project
 
 ## Versions
 
-Created in December 2019
-Development : ended January 2020
+Created in December 2019  
+Development : ended January 2020  
 Last version : https://github.com/CamClrt/labyrinth/
 
 ## Auteurs
