@@ -1,6 +1,6 @@
 # Labyrinth
 
-Help MacGyver to find all the items and beat the final boss
+This project aims to create Python game in wich you help MacGyver to find all the items and beat the final boss
 
 *(This is a student project, the school is [OpenClassrooms](https://openclassrooms.com/ ))*
 
@@ -12,15 +12,17 @@ To install this game you need :
 
 * Python 3.7 : https://www.python.org/downloads/
 * PyGame library : https://www.pygame.org/wiki/GettingStarted
-* With MacOS Mojave : pygame=2.0.0.dev4 https://github.com/pygame/pygame/issues/555
+* With MacOS : pygame=2.0.0.dev4 https://github.com/pygame/pygame/issues/555
 
 ### To use the game
 
-???
+contrôles + objectifs
 
 ## Start the game
 
-To start the game ... ???
+pip install 
+
+> projet du type package : https://marthall.github.io/blog/how-to-package-a-python-app/ (tuto)
 
 ## Quick description
 
@@ -45,7 +47,7 @@ Last version : https://github.com/CamClrt/labyrinth/
 ## Auteurs
 
 **Camille Clarret** aka **Camoulty** or **CamClrt** : https://github.com/CamClrt/labyrinth/  
-Baby dev 🐣 I'm learning 🐍 #Python at [OpenClassrooms](https://openclassrooms.com/ )
+Baby dev 🐣 I'm learning 🐍 #Python with [OpenClassrooms](https://openclassrooms.com/ )
 
 ## Licence
 

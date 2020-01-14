@@ -4,9 +4,8 @@ class Player():
     """to create the player"""
 
     # ATTRIBUTES
-    def __init__(self,name,x,y):
+    def __init__(self,x,y):
         """init player"""
-        self.name = name
         self.x = x # abscissa
         self.y = y # ordinate
 
