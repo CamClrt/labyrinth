@@ -22,6 +22,10 @@ To install this game you need :
 
 To start the game ... ???
 
+## Quick description
+
+![quick_description.png]:
+
 ## Made with
 
 * PyCharm : https://www.jetbrains.com/fr-fr/pycharm/), text editor
