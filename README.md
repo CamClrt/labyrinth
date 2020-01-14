@@ -40,7 +40,7 @@ Last version : https://github.com/CamClrt/labyrinth/
 
 ## Auteurs
 
-**Camille Clarret** aka **Camoulty** or **CamClrt** : https://github.com/CamClrt/labyrinth/
+**Camille Clarret** aka **Camoulty** or **CamClrt** : https://github.com/CamClrt/labyrinth/  
 Baby dev 🐣 I'm learning 🐍 #Python at [OpenClassrooms](https://openclassrooms.com/ )
 
 ## Licence
