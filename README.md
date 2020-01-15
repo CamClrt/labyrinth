@@ -31,9 +31,7 @@ MOUSE :
 
 ## Start the game
 
-pip install 
-
-> projet du type package : https://marthall.github.io/blog/how-to-package-a-python-app/ (tuto)
+pip install the_cam_labyrinth
 
 ## Quick description
 
@@ -60,14 +58,14 @@ Last version : https://github.com/CamClrt/labyrinth/
 **Camille Clarret** aka **Camoulty** or **CamClrt** : https://github.com/CamClrt/labyrinth/  
 Baby dev 🐣 I'm learning 🐍 #Python with [OpenClassrooms](https://openclassrooms.com/ )
 
-Aymen Mouelhi (as supervisor) : https://github.com/aymen-mouelhi
+**Aymen Mouelhi** (as supervisor) : https://github.com/aymen-mouelhi
 
 ## Licence
 
-http://jessefreeman.com/
-http://eskipaper.com/background-3.html
-https://images.app.goo.gl/mur3HqhN7aH79aKJ8
-https://images.app.goo.gl/iQKypzzZHj8MT1tG6
-https://minecraft.novaskin.me/skin/935743207/assets-minecraft-textures-items-bread-png
+http://jessefreeman.com/  
+http://eskipaper.com/background-3.html  
+https://images.app.goo.gl/mur3HqhN7aH79aKJ8  
+https://images.app.goo.gl/iQKypzzZHj8MT1tG6  
+https://minecraft.novaskin.me/skin/935743207/assets-minecraft-textures-items-bread-png  
 https://pngimage.net/objet-png-2/
 
