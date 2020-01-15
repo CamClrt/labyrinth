@@ -16,7 +16,18 @@ To install this game you need :
 
 ### To use the game
 
-contrôles + objectifs
+Controles :
+
+KEYBOARD :
+* down, move the player down in the labyrinth
+* up, move the player up in the labyrinth
+* left, move the player left in the labyrinth
+* right, move the player right in the labyrinth
+
+MOUSE :
+
+* click on the button start in the home page
+* click to quit to end the game
 
 ## Start the game
 
@@ -49,6 +60,14 @@ Last version : https://github.com/CamClrt/labyrinth/
 **Camille Clarret** aka **Camoulty** or **CamClrt** : https://github.com/CamClrt/labyrinth/  
 Baby dev 🐣 I'm learning 🐍 #Python with [OpenClassrooms](https://openclassrooms.com/ )
 
+Aymen Mouelhi (as supervisor) : https://github.com/aymen-mouelhi
+
 ## Licence
 
-WTFPL : http://jessefreeman.com/ (Picture)
+http://jessefreeman.com/
+http://eskipaper.com/background-3.html
+https://images.app.goo.gl/mur3HqhN7aH79aKJ8
+https://images.app.goo.gl/iQKypzzZHj8MT1tG6
+https://minecraft.novaskin.me/skin/935743207/assets-minecraft-textures-items-bread-png
+https://pngimage.net/objet-png-2/
+
