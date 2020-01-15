@@ -11,8 +11,6 @@ from data import *
 class Game:
     """launch the game"""
     def __init__(self):
-        self.close_window = False
-        self.game_condition = False
         self.map_list = []  # contain the matrix of the map
         self.item_collected = ""  # contain the name of the item collected
         self.item_tuple = ""  # contain the positions of the items
