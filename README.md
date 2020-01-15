@@ -14,6 +14,10 @@ To install this game you need :
 * PyGame library : https://www.pygame.org/wiki/GettingStarted
 * With MacOS : pygame=2.0.0.dev4 https://github.com/pygame/pygame/issues/555
 
+In your terminal use this command :
+
+*pip install the_cam_labyrinth*
+
 ### To use the game
 
 Controles :
@@ -27,11 +31,7 @@ KEYBOARD :
 MOUSE :
 
 * click on the button start in the home page
-* click to quit to end the game
-
-## Start the game
-
-pip install the_cam_labyrinth
+* click on quit to end the game
 
 ## Quick description
 
@@ -60,7 +60,7 @@ Baby dev 🐣 I'm learning 🐍 #Python with [OpenClassrooms](https://openclassr
 
 **Aymen Mouelhi** (as supervisor) : https://github.com/aymen-mouelhi
 
-## Licence
+## Licences
 
 http://jessefreeman.com/  
 http://eskipaper.com/background-3.html  
