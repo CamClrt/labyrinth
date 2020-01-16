@@ -16,7 +16,7 @@ To install this game you need :
 
 In your terminal use this command :
 
-*pip install the_cam_labyrinth*
+*pip install cam_labyrinth*
 
 ### To use the game
 

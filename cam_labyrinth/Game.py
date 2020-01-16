@@ -1,11 +1,11 @@
-from Map import Map
-from Player import Player
-from Item import Item
+from cam_labyrinth.Map import Map
+from cam_labyrinth.Player import Player
+from cam_labyrinth.Item import Item
 
 import pygame
 from pygame.locals import *
 
-from data import *
+from cam_labyrinth.data import *
 
 
 class Game:

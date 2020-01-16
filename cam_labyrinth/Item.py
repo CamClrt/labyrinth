@@ -1,6 +1,6 @@
 import random
 
-from data import SPRITE_SIZE
+from cam_labyrinth.data import SPRITE_SIZE
 
 
 class Item():

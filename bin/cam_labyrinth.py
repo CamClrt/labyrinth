@@ -1,4 +1,4 @@
-from Game import Game
+from cam_labyrinth.Game import Game
 
 if __name__ == "__main__":
     game = Game()
