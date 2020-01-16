@@ -4,7 +4,7 @@ This project aims to create Python game in wich you help MacGyver to find all th
 
 *(This is a student project, the school is [OpenClassrooms](https://openclassrooms.com/ ))*
 
-![Home_picture](https://github.com/CamClrt/labyrinth/blob/master/resources/home.png)
+![Home_picture](https://github.com/CamClrt/labyrinth/blob/master/cam_labyrinth/resources/home.png)
 
 ### Before starting
 
@@ -35,7 +35,7 @@ MOUSE :
 
 ## Quick description
 
-![quick_description.png](https://github.com/CamClrt/labyrinth/blob/master/resources/quick_description.png)
+![quick_description.png](https://github.com/CamClrt/labyrinth/blob/master//cam_labyrinth/resources/quick_description.png)
 
 ## Made with
 
