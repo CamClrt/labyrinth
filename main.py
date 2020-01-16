@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from cam_labyrinth.Game import Game
 
 if __name__ == "__main__":

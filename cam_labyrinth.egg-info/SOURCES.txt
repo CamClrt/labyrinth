@@ -11,6 +11,7 @@ cam_labyrinth/map.txt
 cam_labyrinth.egg-info/PKG-INFO
 cam_labyrinth.egg-info/SOURCES.txt
 cam_labyrinth.egg-info/dependency_links.txt
+cam_labyrinth.egg-info/requires.txt
 cam_labyrinth.egg-info/top_level.txt
 cam_labyrinth/resources/Thumbs.db
 cam_labyrinth/resources/background.jpg
