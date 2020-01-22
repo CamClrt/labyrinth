@@ -62,8 +62,8 @@ Baby dev 🐣 I'm learning 🐍 #Python with [OpenClassrooms](https://openclassr
 
 ## Licences
 
-http://jessefreeman.com/
-http://eskipaper.com/background-3.html
-https://images.app.goo.gl/mur3HqhN7aH79aKJ8
-https://images.app.goo.gl/iQKypzzZHj8MT1tG6
+http://jessefreeman.com/  
+http://eskipaper.com/background-3.html  
+https://images.app.goo.gl/mur3HqhN7aH79aKJ8  
+https://images.app.goo.gl/iQKypzzZHj8MT1tG6  
 
