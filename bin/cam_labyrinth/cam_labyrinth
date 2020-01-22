@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# coding: utf-8
 
 from cam_labyrinth.Game import Game
 

@@ -35,7 +35,7 @@ MOUSE :
 
 ## Quick description
 
-![quick_description.png](https://github.com/CamClrt/labyrinth/blob/master//cam_labyrinth/resources/quick_description.png)
+![quick_description.png](https://github.com/CamClrt/labyrinth/blob/master/cam_labyrinth/resources/quick_description.png)
 
 ## Made with
 
