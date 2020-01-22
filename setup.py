@@ -6,7 +6,7 @@ setup(
     author="Camille Clarret",
     author_email="camille.clarret@gmail.com",
     url="https://github.com/CamClrt/labyrinth",
-    install_requires=['pygame'],
+    install_requires=['pygame==2.0.0.dev4'],
     scripts=['bin/cam_labyrinth'],
     packages=['cam_labyrinth'],
     package_data={'cam_labyrinth': ['resources/*','*.txt'],},
