@@ -1,6 +1,6 @@
 README.md
 setup.py
-bin/cam_labyrinth.py
+bin/cam_labyrinth
 cam_labyrinth/Game.py
 cam_labyrinth/Item.py
 cam_labyrinth/Map.py
@@ -15,14 +15,12 @@ cam_labyrinth.egg-info/requires.txt
 cam_labyrinth.egg-info/top_level.txt
 cam_labyrinth/resources/Thumbs.db
 cam_labyrinth/resources/background.jpg
-cam_labyrinth/resources/burger.png
 cam_labyrinth/resources/decorations.png
 cam_labyrinth/resources/equipment-32x32.png
 cam_labyrinth/resources/ether.png
 cam_labyrinth/resources/guard.png
 cam_labyrinth/resources/home.png
 cam_labyrinth/resources/items.png
-cam_labyrinth/resources/lamp.png
 cam_labyrinth/resources/license.txt
 cam_labyrinth/resources/lifebar-32x32.png
 cam_labyrinth/resources/lose.png
