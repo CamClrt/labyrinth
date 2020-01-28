@@ -18,7 +18,7 @@ In your terminal use theses commands :
 
 git clone https://github.com/CamClrt/labyrinth.git  
 cd labyrinth  
-pip install.
+pip install .
 
 ### To use the game
 
