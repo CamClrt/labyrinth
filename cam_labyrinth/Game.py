@@ -18,10 +18,10 @@ class Game:
         self.y_wall = 0  # collect the ordinate of the wall
         self.x_item = 0  # collect the abscissa of the item
         self.y_item = 0  # collect the ordinate of the item
-        self.home_page = True # launch home page
-        self.game_page = False # launch game page
-        self.end_page_win = False # launch win page
-        self.end_page_lose = False # launch lose page
+        self.home_page = True  # launch home page
+        self.game_page = False  # launch game page
+        self.end_page_win = False  # launch win page
+        self.end_page_lose = False  # launch lose page
 
     def start_game(self):
         """start the game"""
@@ -92,6 +92,16 @@ class Game:
                 # set and stick the guard on the map
                 guard_picture = pygame.image.load(GUARD_PICTURE_URL).convert()
                 window.blit(guard_picture, FINISH_PX)
+
+                # display a counter with the items collected
+                self.font = pygame.font.Font(FONT_URL, 30)  #add a font to display a counter
+                if len(self.items_dictionary) > 1:
+                    self.item_counter_display = self.font.render("Counter : {} remaining items".format(len(self.items_dictionary)),True, [255, 255, 255])
+                elif len(self.items_dictionary) == 1:
+                    self.item_counter_display = self.font.render("Counter : {} remaining item".format(len(self.items_dictionary)),True, [255, 255, 255])
+                elif len(self.items_dictionary) == 0:
+                    self.item_counter_display = self.font.render("Counter : You have collected all the items".format(len(self.items_dictionary)),True, [255, 255, 255])
+                window.blit(self.item_counter_display, (40, 630))
 
                 # refresh the window
                 pygame.display.flip()
@@ -177,7 +187,7 @@ class Game:
 
         # set the empty window and its title
         pygame.display.set_caption(WINDOW_TITLE)  # determine the title
-        window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))  # determine the size of the window
+        window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_HEIGHT))  # determine the size of the window
         background = pygame.image.load(BACKGROUND).convert()  # load the background
         window.blit(background, (0, 0))  # stick the background
 
